@@ -1,0 +1,276 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     10123,        268]
+NotebookOptionsPosition[      8860,        241]
+NotebookOutlinePosition[      9255,        257]
+CellTagsIndexPosition[      9212,        254]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"xd", "[", 
+   RowBox[{"u_", ",", "v_", ",", "Rdon_", ",", "Rtub_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"Rdon", "+", 
+     RowBox[{"Rtub", " ", 
+      RowBox[{"Cos", "[", "v", "]"}]}]}], ")"}], " ", 
+   RowBox[{"Sin", "[", "u", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.950172506901875*^9, 3.950172506903878*^9}, 
+   3.950172971603961*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"2834ca8d-dbd5-4564-825e-72ccc02301a5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"yd", "[", 
+   RowBox[{"u_", ",", "v_", ",", "Rdon_", ",", "Rtub_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"Rdon", "+", 
+     RowBox[{"Rtub", " ", 
+      RowBox[{"Cos", "[", "v", "]"}]}]}], ")"}], " ", 
+   RowBox[{"Cos", "[", "u", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.950172521062772*^9, 3.95017252106569*^9}, 
+   3.950172976507002*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"4cfc915c-202d-4e35-b88b-96843a2943e2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"zd", "[", 
+   RowBox[{"u_", ",", "v_", ",", "Rtub_"}], "]"}], ":=", 
+  RowBox[{"Rtub", " ", 
+   RowBox[{"Sin", "[", "v", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9501725415947933`*^9, 3.950172545112421*^9}, 
+   3.950172986303123*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"ab44e682-9756-4b02-bb1f-fe49a65ac595"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sd", "[", 
+   RowBox[{"u_", ",", "v_", ",", "Rdon_", ",", "Rtub_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"xd", "[", 
+     RowBox[{"u", ",", "v", ",", "Rdon", ",", "Rtub"}], "]"}], ",", 
+    RowBox[{"yd", "[", 
+     RowBox[{"u", ",", "v", ",", "Rdon", ",", "Rtub"}], "]"}], ",", 
+    RowBox[{"zd", "[", 
+     RowBox[{"u", ",", "v", ",", "Rtub"}], "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.9501725533819*^9, 3.950172560225692*^9}, 
+   3.95017299301615*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"9dcf8407-9fc6-4446-8cae-bada0511c156"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Donut", "[", 
+   RowBox[{"Rdon_", ",", "Rtub_", ",", "color_"}], "]"}], ":=", 
+  RowBox[{"ParametricPlot3D", "[", 
+   RowBox[{
+    RowBox[{"Sd", "[", 
+     RowBox[{"u", ",", "v", ",", "Rdon", ",", "Rtub"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"u", ",", "0", ",", 
+      RowBox[{"2", "Pi"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"v", ",", "0", ",", 
+      RowBox[{"2", "Pi"}]}], "}"}], ",", 
+    RowBox[{"PlotStyle", "->", "color"}], ",", 
+    RowBox[{"PlotRange", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "30"}], ",", "30"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "30"}], ",", "30"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{3.950172568465599*^9, 3.9501729993196783`*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"44cdb25f-d592-43ef-a5c5-9cb12c279dc1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"C1", "=", 
+  RowBox[{"{", 
+   RowBox[{"Black", ",", "Red", ",", "Green", ",", "Blue", ",", "Orange"}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.9501725748578787`*^9, 3.9501725798977757`*^9}, 
+   3.950173006698894*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"4f4a6ac7-3796-4a5f-8f4a-a1ab0673c818"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[<|"color" -> GrayLevel[0]|>,
+    "GrayLevelColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+    "RGBColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[0, 1, 0]|>,
+    "RGBColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+    "RGBColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>,
+    "RGBColorSwatchTemplate"]}], "}"}]], "Output",
+ CellChangeTimes->{3.9501730186679163`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"2cebdbc6-c800-4c0a-8005-1f5a71b53110"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"SetterBar", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", "color", "]"}], ",", "C1"}], "]"}], ",", 
+   RowBox[{"Dynamic", "[", "color", "]"}]}], "}"}], "\n", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Donut", "[", 
+    RowBox[{"Rdon", ",", "Rtub", ",", "color"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Rdon", ",", "10", ",", "20", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Rtub", ",", "5", ",", "10", ",", "0.5"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{3.9501725815083427`*^9, 3.950173013492532*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"712c30df-c9ff-4779-b00c-eb082b0f19ae"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {
+        SetterBox[Dynamic[$CellContext`color], {GrayLevel[0]}, 
+         TemplateBox[<|"color" -> GrayLevel[0]|>,
+          "GrayLevelColorSwatchTemplate"]], 
+        SetterBox[Dynamic[$CellContext`color], {RGBColor[1, 0, 0]}, 
+         TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+          "RGBColorSwatchTemplate"]], 
+        SetterBox[Dynamic[$CellContext`color], {RGBColor[0, 1, 0]}, 
+         TemplateBox[<|"color" -> RGBColor[0, 1, 0]|>,
+          "RGBColorSwatchTemplate"]], 
+        SetterBox[Dynamic[$CellContext`color], {RGBColor[0, 0, 1]}, 
+         TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+          "RGBColorSwatchTemplate"]], 
+        SetterBox[Dynamic[$CellContext`color], {RGBColor[1, 0.5, 0]}, 
+         TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>,
+          "RGBColorSwatchTemplate"]]}
+      },
+      BaselinePosition->{1, 1},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     Deployed->True],
+    SetterBar[
+     Dynamic[$CellContext`color], {
+      GrayLevel[0], 
+      RGBColor[1, 0, 0], 
+      RGBColor[0, 1, 0], 
+      RGBColor[0, 0, 1], 
+      RGBColor[1, 0.5, 0]}]], ",", 
+   DynamicBox[ToBoxes[$CellContext`color, StandardForm],
+    ImageSizeCache->{
+     11.196900000000001`, {2.7324832031250015`, 8.464416796875}}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.950173018673514*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"c598b38c-0e61-438c-ae3a-0200999f450c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Rdon$$ = 18, $CellContext`Rtub$$ = 9.5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`Rdon$$], 10, 20, 1, ControlType -> Manipulator}, {
+      Hold[$CellContext`Rtub$$], 5, 10, 0.5, ControlType -> Manipulator}}, 
+    Typeset`size$$ = {360., {171.2400819713443, 176.9720155650943}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Rdon$$ = 10, $CellContext`Rtub$$ = 5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, 
+      "Body" :> $CellContext`Donut[$CellContext`Rdon$$, $CellContext`Rtub$$, \
+$CellContext`color], 
+      "Specifications" :> {{$CellContext`Rdon$$, 10, 20, 
+         1}, {$CellContext`Rtub$$, 5, 10, 0.5}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{409.1, {233.71050738638337`, 239.44244098013337`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.950173018691613*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"43423c47-3008-47fb-b98e-c03fc4fbb04c"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"99c76e3b-8c38-49f4-946a-75fedd1c44f1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 472, 12, 29, "Input",ExpressionUUID->"2834ca8d-dbd5-4564-825e-72ccc02301a5"],
+Cell[1029, 34, 471, 12, 29, "Input",ExpressionUUID->"4cfc915c-202d-4e35-b88b-96843a2943e2"],
+Cell[1503, 48, 348, 8, 29, "Input",ExpressionUUID->"ab44e682-9756-4b02-bb1f-fe49a65ac595"],
+Cell[1854, 58, 593, 14, 29, "Input",ExpressionUUID->"9dcf8407-9fc6-4446-8cae-bada0511c156"],
+Cell[2450, 74, 1012, 29, 70, "Input",ExpressionUUID->"44cdb25f-d592-43ef-a5c5-9cb12c279dc1"],
+Cell[CellGroupData[{
+Cell[3487, 107, 323, 7, 29, "Input",ExpressionUUID->"4f4a6ac7-3796-4a5f-8f4a-a1ab0673c818"],
+Cell[3813, 116, 608, 14, 33, "Output",ExpressionUUID->"2cebdbc6-c800-4c0a-8005-1f5a71b53110"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4458, 135, 671, 17, 49, "Input",ExpressionUUID->"712c30df-c9ff-4779-b00c-eb082b0f19ae"],
+Cell[5132, 154, 1681, 43, 44, "Output",ExpressionUUID->"c598b38c-0e61-438c-ae3a-0200999f450c"],
+Cell[6816, 199, 2028, 39, 509, "Output",ExpressionUUID->"43423c47-3008-47fb-b98e-c03fc4fbb04c"]
+}, Open  ]]
+}
+]
+*)
+

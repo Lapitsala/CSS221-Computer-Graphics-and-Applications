@@ -1,0 +1,169 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      5598,        161]
+NotebookOptionsPosition[      4563,        138]
+NotebookOutlinePosition[      4958,        154]
+CellTagsIndexPosition[      4915,        151]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f1", "[", 
+   RowBox[{"x_", ",", "y_", ",", "a_"}], "]"}], ":=", 
+  RowBox[{"a", "*", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"x", "^", "2"}], "+", 
+     RowBox[{"y", "^", "2"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.950172506901875*^9, 3.950172506903878*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"2834ca8d-dbd5-4564-825e-72ccc02301a5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"C1", "[", "t_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Sin", "[", "t", "]"}], ",", 
+    RowBox[{"Cos", "[", "t", "]"}], ",", "t"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.950172521062772*^9, 3.95017252106569*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"4cfc915c-202d-4e35-b88b-96843a2943e2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PlotB1", "[", "s_", "]"}], ":=", 
+  RowBox[{"Plot3D", "[", 
+   RowBox[{
+    RowBox[{"f1", "[", 
+     RowBox[{"x", ",", "y", ",", "s"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"y", ",", 
+      RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+    RowBox[{"BoxRatios", "->", "1"}], ",", " ", 
+    RowBox[{"PlotRange", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "15"}], "}"}]}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9501725415947933`*^9, 3.950172545112421*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"ab44e682-9756-4b02-bb1f-fe49a65ac595"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PlotA1", "[", "s_", "]"}], ":=", 
+  RowBox[{"ParametricPlot3D", "[", 
+   RowBox[{
+    RowBox[{"C1", "[", "t", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+    RowBox[{"PlotStyle", "->", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Thickness", "[", "0.05", "]"}]}], "}"}]}], ",", 
+    RowBox[{"BoxRatios", "->", "1"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9501725533819*^9, 3.950172560225692*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"9dcf8407-9fc6-4446-8cae-bada0511c156"],
+
+Cell[BoxData[
+ RowBox[{"Myslider1", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Slider", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "a1", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.1", ",", "3", ",", "0.1"}], "}"}], ",", 
+      RowBox[{"Background", "->", "Yellow"}]}], "]"}], ",", 
+    RowBox[{"Dynamic", "[", "a1", "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{3.950172568465599*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"44cdb25f-d592-43ef-a5c5-9cb12c279dc1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PlotAB", "[", "s_", "]"}], ":=", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"PlotA1", "[", "s", "]"}], ",", 
+    RowBox[{"PlotB1", "[", "s", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9501725748578787`*^9, 3.9501725798977757`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"4f4a6ac7-3796-4a5f-8f4a-a1ab0673c818"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Myslider1", ",", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"PlotAB", "[", "a1", "]"}], "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{3.9501725815083427`*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"712c30df-c9ff-4779-b00c-eb082b0f19ae"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SliderBox[Dynamic[$CellContext`a1], {0.1, 3, 0.1},
+      Background->RGBColor[1, 1, 0]], ",", 
+     DynamicBox[ToBoxes[$CellContext`a1, StandardForm],
+      ImageSizeCache->{23.4, {0.156, 8.45}}]}], "}"}], ",", 
+   DynamicBox[ToBoxes[
+     $CellContext`PlotAB[$CellContext`a1], StandardForm],
+    ImageSizeCache->{180., {90.59324170476643, 96.32517529851643}}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.950172581774931*^9, {3.950172931131649*^9, 3.950172947629142*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"7175b55c-06a8-4e4a-9ac2-901df6916977"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"99c76e3b-8c38-49f4-946a-75fedd1c44f1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 384, 10, 29, "Input",ExpressionUUID->"2834ca8d-dbd5-4564-825e-72ccc02301a5"],
+Cell[941, 32, 344, 8, 29, "Input",ExpressionUUID->"4cfc915c-202d-4e35-b88b-96843a2943e2"],
+Cell[1288, 42, 908, 26, 49, "Input",ExpressionUUID->"ab44e682-9756-4b02-bb1f-fe49a65ac595"],
+Cell[2199, 70, 573, 14, 49, "Input",ExpressionUUID->"9dcf8407-9fc6-4446-8cae-bada0511c156"],
+Cell[2775, 86, 483, 12, 29, "Input",ExpressionUUID->"44cdb25f-d592-43ef-a5c5-9cb12c279dc1"],
+Cell[3261, 100, 357, 8, 29, "Input",ExpressionUUID->"4f4a6ac7-3796-4a5f-8f4a-a1ab0673c818"],
+Cell[CellGroupData[{
+Cell[3643, 112, 273, 6, 29, "Input",ExpressionUUID->"712c30df-c9ff-4779-b00c-eb082b0f19ae"],
+Cell[3919, 120, 628, 15, 247, "Output",ExpressionUUID->"7175b55c-06a8-4e4a-9ac2-901df6916977"]
+}, Open  ]]
+}
+]
+*)
+
