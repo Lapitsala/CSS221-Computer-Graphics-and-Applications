@@ -1,0 +1,227 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8246,        219]
+NotebookOptionsPosition[      7206,        196]
+NotebookOutlinePosition[      7601,        212]
+CellTagsIndexPosition[      7558,        209]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "[", "t_", "]"}], ":=", 
+  RowBox[{"Cos", "[", "t", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"y", "[", "t_", "]"}], ":=", 
+  RowBox[{"Sin", "[", "t", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"z", "[", "t_", "]"}], ":=", 
+  RowBox[{"0.2", "*", "t"}]}]}], "Input",
+ CellChangeTimes->{{3.950479518769691*^9, 3.950479518770783*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"d3bd75b8-b384-46a6-a586-d5983efc92f9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"R", "=", "0.2"}], ";"}]], "Input",
+ CellChangeTimes->{3.950479647978343*^9},
+ CellLabel->"In[43]:=",ExpressionUUID->"e1820d56-b2ca-4b73-9d12-62770dca6fa9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"helixPoint", "[", "t_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", 
+    RowBox[{"z", "[", "t", "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.9504795298911877`*^9, 3.950479536789336*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"cd52fecc-943b-41cd-a87c-2f70b53a54d2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"helixCurve", "[", "t_", "]"}], ":=", 
+  RowBox[{"ParametricPlot3D", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "[", "s", "]"}], ",", 
+      RowBox[{"y", "[", "s", "]"}], ",", 
+      RowBox[{"z", "[", "s", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"s", ",", "0", ",", 
+      RowBox[{"8", "*", "Pi"}]}], "}"}], ",", 
+    RowBox[{"PlotStyle", "->", 
+     RowBox[{"{", 
+      RowBox[{"Blue", ",", 
+       RowBox[{"Thickness", "[", "0.005", "]"}]}], "}"}]}], ",", 
+    RowBox[{"BoxRatios", "->", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "2"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "5"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"AxesLabel", "->", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", "\"\<y\>\"", ",", "\"\<z\>\""}], "}"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.950479538417947*^9, 3.950479544097632*^9}, {
+  3.9504796600836563`*^9, 3.950479699390421*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"e5e9e71a-36a2-4864-be42-67a8431efa4a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"particle", "[", 
+   RowBox[{"t_", ",", "color_"}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"color", ",", 
+     RowBox[{"Sphere", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"y", "[", "t", "]"}], ",", 
+         RowBox[{"z", "[", "t", "]"}]}], "}"}], ",", "R"}], "]"}]}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{3.9504797100916233`*^9},
+ CellLabel->"In[46]:=",ExpressionUUID->"ccc8b712-c94f-4499-8000-cb03afd9a1bf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"helixCurve", "[", "t", "]"}], ",", 
+     RowBox[{"particle", "[", 
+      RowBox[{
+       RowBox[{"s", "*", "t"}], ",", "c"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"8", "*", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"s", ",", "1"}], "}"}], ",", "0.5", ",", "2", ",", "0.1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "Red"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", "Yellow", ",", "Green", ",", "Blue"}], "}"}], ",", 
+     RowBox[{"ControlType", "->", "PopupMenu"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.950479719130968*^9, 3.9504797336166563`*^9}, {
+  3.950479813017665*^9, 3.9504798154690037`*^9}, {3.950479847082761*^9, 
+  3.950479859764722*^9}},
+ CellLabel->"In[47]:=",ExpressionUUID->"e0017565-ea4c-45b8-a048-ad9fe17c55df"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`c$$ = RGBColor[1, 0, 0], $CellContext`s$$ = 
+    1.1, $CellContext`t$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 8 Pi, ControlType -> Manipulator}, {{
+       Hold[$CellContext`s$$], 1}, 0.5, 2, 0.1, ControlType -> Manipulator}, {{
+       Hold[$CellContext`c$$], 
+       RGBColor[1, 0, 0]}, {
+       RGBColor[1, 0, 0], 
+       RGBColor[1, 1, 0], 
+       RGBColor[0, 1, 0], 
+       RGBColor[0, 0, 1]}, ControlType -> PopupMenu}}, Typeset`size$$ = {
+    360., {177.7275116609469, 183.4594452546969}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`c$$ = RGBColor[1, 0, 0], $CellContext`s$$ = 
+        1, $CellContext`t$$ = 0}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> Show[
+        $CellContext`helixCurve[$CellContext`t$$], 
+        $CellContext`particle[$CellContext`s$$ $CellContext`t$$, \
+$CellContext`c$$]], 
+      "Specifications" :> {{$CellContext`t$$, 0, 8 
+         Pi}, {{$CellContext`s$$, 1}, 0.5, 2, 0.1}, {{$CellContext`c$$, 
+          RGBColor[1, 0, 0]}, {
+          RGBColor[1, 0, 0], 
+          RGBColor[1, 1, 0], 
+          RGBColor[0, 1, 0], 
+          RGBColor[0, 0, 1]}, ControlType -> PopupMenu}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{409.1, {255.067028872861, 260.798962466611}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.950479734996036*^9, 3.950479737980974*^9}, {
+  3.950479822056308*^9, 3.950479862606494*^9}},
+ CellLabel->"Out[47]=",ExpressionUUID->"01933ec0-99dc-4cdb-b900-bef5243586a4"]
+}, Open  ]],
+
+Cell["", "Subtitle",ExpressionUUID->"4d01a66f-ec38-4fde-8e4d-806466592833"]
+},
+WindowSize->{808, 911},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a0a64e47-391f-425f-bc56-1f5fa23d54de"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 437, 11, 70, "Input",ExpressionUUID->"d3bd75b8-b384-46a6-a586-d5983efc92f9"],
+Cell[994, 33, 190, 4, 29, "Input",ExpressionUUID->"e1820d56-b2ca-4b73-9d12-62770dca6fa9"],
+Cell[1187, 39, 382, 9, 29, "Input",ExpressionUUID->"cd52fecc-943b-41cd-a87c-2f70b53a54d2"],
+Cell[1572, 50, 1320, 37, 70, "Input",ExpressionUUID->"e5e9e71a-36a2-4864-be42-67a8431efa4a"],
+Cell[2895, 89, 567, 16, 29, "Input",ExpressionUUID->"ccc8b712-c94f-4499-8000-cb03afd9a1bf"],
+Cell[CellGroupData[{
+Cell[3487, 109, 1006, 27, 49, "Input",ExpressionUUID->"e0017565-ea4c-45b8-a048-ad9fe17c55df"],
+Cell[4496, 138, 2616, 53, 532, "Output",ExpressionUUID->"01933ec0-99dc-4cdb-b900-bef5243586a4"]
+}, Open  ]],
+Cell[7127, 194, 75, 0, 52, "Subtitle",ExpressionUUID->"4d01a66f-ec38-4fde-8e4d-806466592833"]
+}
+]
+*)
+
