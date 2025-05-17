@@ -1,0 +1,127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3732,        117]
+NotebookOptionsPosition[      3035,         96]
+NotebookOutlinePosition[      3432,        112]
+CellTagsIndexPosition[      3389,        109]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"Sin", "[", "#", "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.9564403679952593`*^9, 3.956440367998371*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"2af984f0-c1b9-4f8c-91e6-372b6d4eab65"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sin", "[", "#1", "]"}], "&"}]], "Output",
+ CellChangeTimes->{3.956440376264574*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"b17d8bee-e4f4-4712-9f01-01487e2a4363"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "Pi"}], ",", "Pi"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.956440374236642*^9},
+ CellLabel->"In[16]:=",ExpressionUUID->"6d5ed2c7-433a-4322-a441-41b5de00bec4"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->
+   NCache[{{-Pi, Pi}, {0., 0.}}, {{-3.141592653589793, 3.141592653589793}, {
+    0., 0.}}],
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.956440377503934*^9, 3.956440380692182*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"cd1462fd-a57e-44ae-82ac-85e43202ba7d"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{44, Automatic}, {50, Automatic}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"593672ec-f377-465b-8ba0-c26517194bc1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 274, 6, 29, "Input",ExpressionUUID->"2af984f0-c1b9-4f8c-91e6-372b6d4eab65"],
+Cell[853, 30, 197, 4, 33, "Output",ExpressionUUID->"b17d8bee-e4f4-4712-9f01-01487e2a4363"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1087, 39, 312, 8, 29, "Input",ExpressionUUID->"6d5ed2c7-433a-4322-a441-41b5de00bec4"],
+Cell[1402, 49, 1617, 44, 240, "Output",ExpressionUUID->"cd1462fd-a57e-44ae-82ac-85e43202ba7d"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
