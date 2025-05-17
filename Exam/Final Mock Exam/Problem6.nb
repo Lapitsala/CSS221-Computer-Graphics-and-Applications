@@ -1,0 +1,421 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     15528,        413]
+NotebookOptionsPosition[     12988,        369]
+NotebookOutlinePosition[     13388,        385]
+CellTagsIndexPosition[     13345,        382]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"towerHeight", "=", "5"}], ";"}]], "Input",
+ CellChangeTimes->{{3.95644401458591*^9, 3.956444108308442*^9}, {
+  3.956456865228158*^9, 3.956456890150593*^9}},
+ CellLabel->
+  "In[100]:=",ExpressionUUID->"254275ed-a392-4028-91a8-b98f1150f62d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"towerRadius", "=", "0.3"}], ";"}]], "Input",
+ CellChangeTimes->{{3.956456905341275*^9, 3.956456917428965*^9}},
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"a7d8cdf6-4598-4dde-9047-dfde90f33fc6"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Define", " ", "blade", " ", "parameters"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{
+  3.956456918944766*^9, {3.956457407827834*^9, 
+   3.95645740889368*^9}},ExpressionUUID->"0b91237e-5ce6-4122-b471-\
+199cd0b2e77e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bladeLength", "=", "2.5"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9564569132942533`*^9, 3.956456923745179*^9}},
+ CellLabel->
+  "In[103]:=",ExpressionUUID->"281c50d3-7a50-4890-aaa7-03ef5f4155d7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bladeWidth", "=", "0.5"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9564569245897827`*^9, 3.956456929622044*^9}},
+ CellLabel->
+  "In[104]:=",ExpressionUUID->"0a46237d-f6ae-46df-b8b1-dded75c09bf2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bladeHeight", "=", "0.2"}], ";"}]], "Input",
+ CellChangeTimes->{{3.956456931726481*^9, 3.956456964303632*^9}},
+ CellLabel->
+  "In[105]:=",ExpressionUUID->"c436452b-3ab8-46c0-b6fb-d0684c1d64d4"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Create", " ", "the", " ", "tower"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.956456960686306*^9, 3.956456961649746*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"c9116717-ea83-4c8c-8525-dfea34e025d6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tower", "=", 
+   RowBox[{"{", 
+    RowBox[{"Gray", ",", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "towerHeight"}], "}"}]}], "}"}], ",", 
+       "towerRadius"}], "]"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9564569783236923`*^9, 3.956456980550544*^9}},
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"ce8a82df-6edb-4e1c-8b09-e915a27832ba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{"tower", ",", 
+   RowBox[{"ImageSize", "->", "Tiny"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.956456981152031*^9, 3.9564569909144573`*^9}},
+ CellLabel->
+  "In[108]:=",ExpressionUUID->"fa8aa8d9-544a-4aaf-b88a-3e4534c8d286"],
+
+Cell[BoxData[
+ Graphics3DBox[
+  {GrayLevel[0.5], CylinderBox[{{0, 0, 0}, {0, 0, 5}}, 0.3]},
+  ImageSize->Tiny]], "Output",
+ CellChangeTimes->{{3.95645698487713*^9, 3.956456991297949*^9}, 
+   3.956457314458518*^9, 3.956457355200412*^9},
+ CellLabel->
+  "Out[108]=",ExpressionUUID->"a5080747-b35a-4da3-b9c1-cc650a416ad1"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"blade", "=", 
+   RowBox[{"Cuboid", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"towerRadius", ",", 
+       RowBox[{
+        RowBox[{"-", "bladeWidth"}], "/", "2"}], ",", 
+       RowBox[{"towerHeight", "-", 
+        RowBox[{"bladeHeight", "/", "2"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"towerRadius", "+", "bladeLength"}], ",", 
+       RowBox[{"bladeWidth", "/", "2"}], ",", 
+       RowBox[{"towerHeight", "+", 
+        RowBox[{"bladeHeight", "/", "2"}]}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.956457015355887*^9, 3.9564570192362757`*^9}},
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"51c7c471-d97e-4911-929d-71bdaacdfa6f"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Create", " ", "N", " ", "blades", " ", "using", " ", "Table"}], 
+  " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.956457020395398*^9, 3.956457034191038*^9}},
+ CellLabel->
+  "In[110]:=",ExpressionUUID->"a2d7e04c-c86c-449c-99f0-7b5dda158cb1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"createBlades", "[", 
+    RowBox[{"color_", ",", "numBlades_"}], "]"}], ":=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"color", ",", 
+       RowBox[{"GeometricTransformation", "[", 
+        RowBox[{"blade", ",", 
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{
+           RowBox[{"i", "*", "2", "*", 
+            RowBox[{"Pi", "/", "numBlades"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "towerHeight"}], "}"}]}], "]"}]}], 
+        "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", 
+       RowBox[{"numBlades", "-", "1"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.956457025316711*^9, 3.956457029285036*^9}},
+ CellLabel->
+  "In[111]:=",ExpressionUUID->"1a3d4636-c9d5-4a10-8173-bab92f8b402e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"windmill", "[", 
+    RowBox[{"angle_", ",", "color_", ",", "numBlades_"}], "]"}], ":=", 
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tower", ",", 
+       RowBox[{"GeometricTransformation", "[", 
+        RowBox[{
+         RowBox[{"createBlades", "[", 
+          RowBox[{"color", ",", "numBlades"}], "]"}], ",", 
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{"angle", ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "towerHeight"}], "}"}]}], "]"}]}], 
+        "]"}]}], "}"}], ",", 
+     RowBox[{"Axes", "->", "True"}], ",", 
+     RowBox[{"ViewPoint", "->", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"-", "2"}], ",", "1.5"}], "}"}]}], ",", 
+     RowBox[{"BoxRatios", "->", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1.5"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "6"}], "}"}]}], "}"}]}]}], "]"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.9564570460494003`*^9, 3.956457049896525*^9}, {
+  3.95645709824543*^9, 3.9564570990512953`*^9}},
+ CellLabel->
+  "In[112]:=",ExpressionUUID->"92598477-e86a-4482-a739-15bfb99d7f52"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Initialize", " ", "dynamic", " ", "variable", " ", "for", " ", "number", " ",
+    "of", " ", "blades"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{
+  3.95645709068215*^9, {3.956457399917115*^9, 
+   3.9564574017101793`*^9}},ExpressionUUID->"74c1fd0d-16a1-4f40-a420-\
+4e04896f1825"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"numBlades", "=", "4"}], ";"}]], "Input",
+ CellChangeTimes->{{3.956457051055505*^9, 3.956457088430731*^9}},
+ CellLabel->
+  "In[114]:=",ExpressionUUID->"858c2cb3-d19a-4e0c-9b68-29202eea8374"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mySlider", "=", 
+  RowBox[{"VerticalSlider", "[", 
+   RowBox[{
+    RowBox[{"Dynamic", "[", "numBlades", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "12", ",", "1"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9564570754300213`*^9, 3.956457078050782*^9}, {
+  3.95645719335823*^9, 3.956457193462339*^9}},
+ CellLabel->
+  "In[116]:=",ExpressionUUID->"6c178221-6cc9-497e-b1fd-0f52aea9a0fb"],
+
+Cell[BoxData[
+ SliderBox[Dynamic[$CellContext`numBlades], {2, 12, 1},
+  Appearance->"Vertical"]], "Output",
+ CellChangeTimes->{3.956457196251178*^9, 3.956457314492138*^9, 
+  3.956457355239379*^9},
+ CellLabel->
+  "Out[116]=",ExpressionUUID->"b4e34b8a-63fd-40ac-bb97-997d70f344d0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Create", " ", "main", " ", "control", " ", "panel", " ", "with", " ", 
+   "rotation", " ", "and", " ", "color"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.956457078744372*^9, 3.956457080165338*^9}, {
+  3.9564572292067003`*^9, 3.956457229507094*^9}},
+ CellLabel->
+  "In[117]:=",ExpressionUUID->"857e2fcc-6bc8-4545-aff0-41122aef91bc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ColorList", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"Red", ",", "Blue", ",", "Green", ",", "Yellow"}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.956457293769897*^9, 3.956457301180965*^9}},
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"7c808066-6060-4f7e-b2ee-542e8ca17438"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+    "RGBColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+    "RGBColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[0, 1, 0]|>,
+    "RGBColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> RGBColor[1, 1, 0]|>,
+    "RGBColorSwatchTemplate"]}], "}"}]], "Output",
+ CellChangeTimes->{3.956457314503058*^9, 3.956457355242629*^9},
+ CellLabel->
+  "Out[118]=",ExpressionUUID->"ace7ec43-eb1b-4b38-897a-7d7eeb081325"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"windmill", "[", 
+      RowBox[{"a", ",", "c", ",", "numBlades"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "0", ",", 
+       RowBox[{"2", "*", "Pi"}], ",", "0.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", "ColorList"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"mySlider", ",", 
+     RowBox[{"Dynamic", "[", "numBlades", "]"}]}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.956457248773574*^9, 3.9564573063400183`*^9}, {
+  3.95645734958375*^9, 3.9564573531267557`*^9}},
+ CellLabel->
+  "In[119]:=",ExpressionUUID->"fe78e962-5335-4e1c-8f97-a24b043fbe82"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`a$$ = 5.5, $CellContext`c$$ = RGBColor[
+      0, 0, 1], Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+      Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ =
+       1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`a$$], 0, 2 Pi, 0.1, ControlType -> Manipulator}, {
+        Hold[$CellContext`c$$], {
+         RGBColor[1, 0, 0], 
+         RGBColor[0, 0, 1], 
+         RGBColor[0, 1, 0], 
+         RGBColor[1, 1, 0]}, ControlType -> SetterBar}}, Typeset`size$$ = {
+      360., {177.71692931193795`, 183.44886290568795`}}, Typeset`update$$ = 0,
+       Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+      Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, 
+        "Variables" :> {$CellContext`a$$ = 0, $CellContext`c$$ = 
+          RGBColor[1, 0, 0]}, "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$, 
+          Typeset`keyframeActionsQ$$, Typeset`keyframeList$$}, 
+        "Body" :> $CellContext`windmill[$CellContext`a$$, $CellContext`c$$, \
+$CellContext`numBlades], 
+        "Specifications" :> {{$CellContext`a$$, 0, 2 Pi, 
+           0.1}, {$CellContext`c$$, {
+            RGBColor[1, 0, 0], 
+            RGBColor[0, 0, 1], 
+            RGBColor[0, 1, 0], 
+            RGBColor[1, 1, 0]}}}, "Options" :> {}, "DefaultOptions" :> {}],
+       ImageSizeCache->{409.1, {239.4677380277583, 245.1996716215083}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SliderBox[Dynamic[$CellContext`numBlades], {2, 12, 1},
+      Appearance->"Vertical"], ",", 
+     DynamicBox[ToBoxes[$CellContext`numBlades, StandardForm],
+      ImageSizeCache->{15.6, {0., 8.45}}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.9564572656264477`*^9, 3.956457279168886*^9}, 
+   3.9564573145147552`*^9, 3.956457355255701*^9},
+ CellLabel->
+  "Out[119]=",ExpressionUUID->"3c411e5e-2b0e-44b9-9ff7-32f44fee6118"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{496, Automatic}, {Automatic, 77}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6592c9b8-07a4-455a-9ae5-cf57a1e13c7a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 274, 6, 29, "Input",ExpressionUUID->"254275ed-a392-4028-91a8-b98f1150f62d"],
+Cell[831, 28, 228, 5, 29, "Input",ExpressionUUID->"a7d8cdf6-4598-4dde-9047-dfde90f33fc6"],
+Cell[1062, 35, 263, 6, 29, "Input",ExpressionUUID->"0b91237e-5ce6-4122-b471-199cd0b2e77e"],
+Cell[1328, 43, 230, 5, 29, "Input",ExpressionUUID->"281c50d3-7a50-4890-aaa7-03ef5f4155d7"],
+Cell[1561, 50, 229, 5, 29, "Input",ExpressionUUID->"0a46237d-f6ae-46df-b8b1-dded75c09bf2"],
+Cell[1793, 57, 228, 5, 29, "Input",ExpressionUUID->"c436452b-3ab8-46c0-b6fb-d0684c1d64d4"],
+Cell[2024, 64, 254, 5, 29, "Input",ExpressionUUID->"c9116717-ea83-4c8c-8525-dfea34e025d6"],
+Cell[2281, 71, 566, 16, 29, "Input",ExpressionUUID->"ce8a82df-6edb-4e1c-8b09-e915a27832ba"],
+Cell[CellGroupData[{
+Cell[2872, 91, 277, 6, 29, "Input",ExpressionUUID->"fa8aa8d9-544a-4aaf-b88a-3e4534c8d286"],
+Cell[3152, 99, 318, 7, 117, "Output",ExpressionUUID->"a5080747-b35a-4da3-b9c1-cc650a416ad1"]
+}, Open  ]],
+Cell[3485, 109, 720, 20, 29, "Input",ExpressionUUID->"51c7c471-d97e-4911-929d-71bdaacdfa6f"],
+Cell[4208, 131, 284, 6, 29, "Input",ExpressionUUID->"a2d7e04c-c86c-449c-99f0-7b5dda158cb1"],
+Cell[4495, 139, 943, 25, 29, "Input",ExpressionUUID->"1a3d4636-c9d5-4a10-8173-bab92f8b402e"],
+Cell[5441, 166, 1539, 43, 49, "Input",ExpressionUUID->"92598477-e86a-4482-a739-15bfb99d7f52"],
+Cell[6983, 211, 329, 8, 29, "Input",ExpressionUUID->"74c1fd0d-16a1-4f40-a420-4e04896f1825"],
+Cell[7315, 221, 224, 5, 29, "Input",ExpressionUUID->"858c2cb3-d19a-4e0c-9b68-29202eea8374"],
+Cell[CellGroupData[{
+Cell[7564, 230, 426, 10, 29, "Input",ExpressionUUID->"6c178221-6cc9-497e-b1fd-0f52aea9a0fb"],
+Cell[7993, 242, 279, 6, 217, "Output",ExpressionUUID->"b4e34b8a-63fd-40ac-bb97-997d70f344d0"]
+}, Open  ]],
+Cell[8287, 251, 385, 8, 29, "Input",ExpressionUUID->"857e2fcc-6bc8-4545-aff0-41122aef91bc"],
+Cell[CellGroupData[{
+Cell[8697, 263, 301, 7, 29, "Input",ExpressionUUID->"7c808066-6060-4f7e-b2ee-542e8ca17438"],
+Cell[9001, 272, 544, 13, 33, "Output",ExpressionUUID->"ace7ec43-eb1b-4b38-897a-7d7eeb081325"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9582, 290, 695, 18, 29, "Input",ExpressionUUID->"fe78e962-5335-4e1c-8f97-a24b043fbe82"],
+Cell[10280, 310, 2692, 56, 501, "Output",ExpressionUUID->"3c411e5e-2b0e-44b9-9ff7-32f44fee6118"]
+}, Open  ]]
+}
+]
+*)
+
